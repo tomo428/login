@@ -12,7 +12,7 @@ public class LoginDAO {
 	public LoginDTO select(String name, String password) throws SQLException {
 		LoginDTO dto = new LoginDTO();
 		DBConnector db = new DBConnector();
-		Connection con = new Connection();
+		Connection con = db.getConnection();
 
 		String sql = "select * from user where user_name=? and password=?";
 
